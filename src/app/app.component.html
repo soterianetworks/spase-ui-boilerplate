@@ -1,0 +1,45 @@
+<!--<p-growl [value]="msgs" sticky="sticky" (onClick)="manuallyClearMsg($event)" [immutable]="false"></p-growl>-->
+<p-toast key="msgs"></p-toast>
+<div class="layout-wrapper"
+     [ngClass]="{'showPage':showPage,'layout-wrapper-menu-active':sidebarActive, 'layout-overlay-menu':overlay}">
+
+    <app-topbar></app-topbar>
+    <app-sidebar></app-sidebar>
+    <div class="layout-content show">
+        <div class="main-layout">
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <p-breadcrumb [style]="{'padding-left':'1px'}" [home]="breadcrumbItems[0]" [model]="breadcrumbItems"
+                                  *ngIf="breadcrumbItems.length"></p-breadcrumb>
+                    <p-panel [showHeader]="false">
+                        <router-outlet></router-outlet>
+                    </p-panel>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-dialog header="{{dialog.config.headerName | localize: lang}}" *ngIf="showPage" [(visible)]="dialog.display"
+          modal="modal"
+          showEffect="fade" width="500" height="520px">
+    <p> {{dialog.config.confirmMsg | localize:lang}}</p>
+    <p-footer>
+        <button type="button"
+                pButton
+                icon=""
+                (click)="dialog.confirm()"
+                label="{{dialog.config.confirmLabName | localize: lang}}"
+                class="raised-btn"></button>
+        <button type="button"
+                pButton
+                icon=""
+                (click)="dialog.close()"
+                label="{{dialog.config.closeLabName | localize: lang}}"
+                class="ui-button-secondary"></button>
+    </p-footer>
+</p-dialog>
+
+<div class="loading-screen" *ngIf="loading">
+    <div><i class="fa fa-spin fa-4x fa-circle-o-notch"></i></div>
+</div>

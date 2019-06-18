@@ -1,0 +1,8 @@
+{
+    "/gateway/*": {
+        "target": "https://www.icwind.net/",
+        "secure": true,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

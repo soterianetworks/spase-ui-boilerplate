@@ -1,0 +1,59 @@
+
+:host {
+    /*margin: 0 5px;*/
+    margin-top: 6px;
+    display: block;
+}
+
+:host ::ng-deep p-table th, :host ::ng-deep p-table td {
+    text-align: center;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
+:host ::ng-deep p-table tr {
+    border-left:1px solid #eaeaea;
+    border-right:1px solid #eaeaea;
+}
+
+:host ::ng-deep p-table tr .text-left {
+    text-align: left;
+}
+
+:host ::ng-deep p-table tr .text-center {
+    text-align: center;
+}
+
+:host ::ng-deep p-table tr .text-right {
+    text-align: right;
+}
+
+:host ::ng-deep p-table .ui-table {
+    min-height: 286px;
+}
+
+:host ::ng-deep  .ui-cell-data  button {
+  margin-right: 2px;
+}
+
+/*****  EXPAND ******/
+
+:host ::ng-deep search dropdown{
+    max-width: 200px;
+}
+
+/* quickly-search */
+.textAlign-left{
+    text-align: left;
+}
+
+@media (min-width : 560px) {
+    :host ::ng-deep .data-table-column-center {
+        text-align : center;
+    }
+}
+
+.ui-search-panel{
+    /*border-bottom: 1px #e9eae9 solid;*/
+}

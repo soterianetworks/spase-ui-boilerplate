@@ -1,0 +1,13 @@
+<span>
+    <a href="#" id="menu-button" (click)="root.onMenuButtonClick($event,0)">
+    <div class="logo" [ngStyle]="getLogoStyle()"></div>
+    </a>
+    <a class="spase-logo-link" href="#">
+    <span class="spase-logo-text">Spase UI Showcase</span>
+        <!--<span class="spase-logo-poweredBy"> Powered by  {{'SoteriaNetWorks' | localize:lang }}</span>-->
+    </a>
+
+    <a id="topbar-menu-button" href="#" (click)="root.onTopbarMenuButtonClick($event)">
+    <i class="fa fa-bars"></i>
+    </a>
+</span>

@@ -1,0 +1,52 @@
+a, a:hover {
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+
+.main-layout {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    /** max-width: 1175px;**/
+}
+
+.layout-wrapper {
+    display: none;
+}
+
+.layout-wrapper.showPage {
+    display: block;
+}
+
+:host ::ng-deep p-growl > div {
+    width: 100%;
+    max-width: 350px;
+    /*position: fixed;*/
+    /*left: 0;*/
+    top: 58px;
+    right: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10000 !important;
+    display: block;
+    cursor: pointer;
+}
+
+:host ::ng-deep p-growl > div > div {
+    min-height: 64.5px;
+}
+
+:host ::ng-deep p-growl > div .ui-growl-item {
+    margin-top: 5px;
+}
+
+
+.layout-content {
+    opacity: 0;
+}
+
+.layout-content.show {
+    opacity: 1;
+}
+
+

@@ -1,0 +1,50 @@
+<p-panel header="示例说明">
+    <pre>
+    1. 菜单注册
+     目录文件：/layout/menu/app.menu.registry.ts
+     事例代码：
+        AppMenuRegistry.registerMenu('features', 100,
+            new Menu('welcome', 'Welcome',
+        'fa fa-fw fa-tachometer-alt-slow', ['/welcome']));
+     参数解析：
+        'features'：属于业务功能模块
+        '100'：当前模块的index值，用于控制菜单项显示的先后顺序
+        'welcome'：当前菜单的key值，用于有子菜单的情况，子菜单通过菜单key值和父菜单进行关联
+        'Welcome'：菜单label值
+        'fa fa-fw fa-tachometer-alt-slow'：菜单的图标
+        '/welcome'：点击菜单后，跳转到对应的理由。可以为空，如果为空写为null
+
+    2. 业务模块
+     目录：/module/welcome/
+
+     启动文件
+        welcome-boot.service.ts 在加载模块时，执行的操作。目前主要用于在加载当前模块时，加载国际化配置和菜单项。
+
+     路由配置
+        welcome-routing.module.ts 路由配置 URL -> Component
+
+     国际化配置
+         i18n/i18n_en_US.json, i18n/i18n_zh_US.json 用于配置国际化。
+         i18n/welcome-i18n.service.ts i18n的service文件 用于定义国际化ProviderName以及读取配置文件
+
+     业务模块
+        detail/detail.component.ts component的数据
+        detail/detail.component.html component的数据
+        detail/detail.component.css component的样式
+
+        三个文件通过@Component标签进行关联
+        templateUrl: './detail.component.html',
+        styleUrls: ['./detail.component.css'],
+
+     模块配置
+        welcome.module.ts
+        引入(import)当前模块需要的其他的模块 和路由配置
+        声明(declarations)当前模块的component
+        提供(providers)当前模块需要的service
+        配置当前模块加载时，要执行的方法
+
+     3. 配置业务模块
+        /app.module.ts
+        将我们写好的业务模块 welcome.module.ts 注册到 app.module.ts 中，这样在系统启动的时候，就会去加载我们的业务模块
+</pre>
+</p-panel>

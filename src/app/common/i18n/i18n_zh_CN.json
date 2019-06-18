@@ -1,0 +1,12 @@
+{
+    "zh_CN": {
+        "theBasicInformation": "基本信息",
+        "serviceAddress": "接口地址",
+        "noRecordsYet": "暂无数据",
+        "success": "成功",
+        "successDelete": "已删除",
+        "successDisable": "已禁用",
+        "successSave": "操作成功",
+        "pleaseSelect": "--请选择--"
+    }
+}

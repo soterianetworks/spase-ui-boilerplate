@@ -1,0 +1,15 @@
+<div class="layout-sidebar" [ngStyle]="{'overflow':app.sidebarActive ? 'hidden' : 'visible'}"
+     (click)="app.onSidebarClick($event)">
+    <div class="layout-tabmenu">
+        <div class="layout-tabmenu-contents">
+            <div class="layout-tabmenu-content" *ngFor="let sidebar of sidebarModel.items;let sIndex = index;"
+                 [ngClass]="{'layout-tabmenu-content-active': app.activeTabIndex === sIndex}"
+                 style="background-color: lightslategrey">
+                <app-sidebarTabContent>
+                    <app-menu [sidebarKey]="sidebar.key"></app-menu>
+                </app-sidebarTabContent>
+            </div>
+        </div>
+    </div>
+</div>
+
