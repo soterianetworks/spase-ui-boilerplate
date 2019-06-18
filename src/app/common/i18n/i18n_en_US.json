@@ -1,0 +1,12 @@
+{
+    "en_US": {
+        "theBasicInformation": "Basic Information",
+        "serviceAddress": "Service Address",
+        "noRecordsYet": "No Records Yet",
+        "success": "Success",
+        "successDelete": "Deleted.",
+        "successDisable": " Disabled.",
+        "successSave": "Saved.",
+        "pleaseSelect": "--select--"
+    }
+}
