@@ -11,9 +11,24 @@ Ask CIP to get the integration information, for our example:
 
 env key | env value | description
 ---|---|---
-CIP_HOST | https://www.icwind.net | 
+CIP_HOST |  | Get the address from CIP provider 
 CLIENT_ID | spample-standalone | OAuth2 Client Id
 SCOPE | default-spample-standalone-scope | OAuth2 Scope
+
+Then update the configuration 
+
+> src/environments/environment.ts
+
+```js
+export const environment = {
+	production: false,
+	GATEWAY_PATH: '/gateway',
+	CIP_HOST: 'get_the_cip_host_from_provider',
+	CLIENT_ID: 'spample-standalone',
+	SCOPE: 'default-spample-standalone-scope',
+};
+```
+
 
 1. Install Dependencies
 
@@ -36,17 +51,3 @@ Open chrome browser , enter the following urls
 * It will be redirected to CIP host to ask SSO login.
 * Finally it will be redirected back after login successfully. 
 
-
-# Appendix - Environments
-
-> src/environments/environment.ts
-
-```js
-export const environment = {
-	production: false,
-	GATEWAY_PATH: '/gateway',
-	CIP_HOST: 'https://www.icwind.net',
-	CLIENT_ID: 'spample-standalone',
-	SCOPE: 'default-spample-standalone-scope',
-};
-```
